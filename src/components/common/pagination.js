@@ -26,8 +26,8 @@ const Pagination = props => {
   );
 }
 
-//Library that allows us to decide the type of the PROPS we receive, and if they are required or not
-Pagination.propTypes = { //in this case type .NUMBER for all
+//Library that lets decide the type of the PROPS we receive, and if they are required or not
+Pagination.propTypes = { //in this case- type .NUMBER for all
   itemsCount: PropTypes.number.isRequired,
   pageSize: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
