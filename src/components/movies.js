@@ -50,8 +50,14 @@ class Movies extends Component {
 
     return (
       <div className='row'>
-        <div className='col-2'>
-          <ListGroup items={genres} onItemSelect={this.handleGenreSelect} />
+        <div className='col-3'>
+          <ListGroup 
+            items={genres} 
+            onItemSelect={this.handleGenreSelect}
+            /* we pass these 2 props so we can work with any kind of objects - set default props in the component 
+            textProperty='name'
+            valueProperty='_id' */
+          />
         </div>
         <div className='col'>
           <p>Showing {count} movies in the DB</p>

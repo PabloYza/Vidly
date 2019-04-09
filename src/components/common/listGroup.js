@@ -1,19 +1,24 @@
 import React from 'react';
 
 
-const ListGroup = () => {
+const ListGroup = props => {
+  const { items, textProperty, valueProperty } = props;
+
 
   return ( 
     <ul className="list-group">
-      <li className="list-group-item">Cras justo odio</li>
-      <li className="list-group-item">Dapibus ac facilisis in</li>
-      <li className="list-group-item">Morbi leo risus</li>
-      <li className="list-group-item">Porta ac consectetur ac</li>
-      <li className="list-group-item">Vestibulum at eros</li>
+      {items.map(item => (
+        <li key={item[valueProperty]} className="list-group-item">
+          {item[textProperty]}
+        </li>
+      ))}
   </ul>
   );
-}
+};
 
-
+ListGroup.defaultProps = {
+  textProperty: 'name',
+  valueProperty: '_id'
+};
 
 export default ListGroup;
