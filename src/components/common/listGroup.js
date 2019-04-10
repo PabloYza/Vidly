@@ -1,8 +1,9 @@
 import React from 'react';
 
 
-const ListGroup = props => {
-  const { items, textProperty, valueProperty, onItemSelect, selectedItem } = props;
+const ListGroup = ({ items, textProperty, valueProperty, onItemSelect, selectedItem }) => {
+/* This destructuring is the same as passing the props as ARGS of the ListGroup method
+  const { items, textProperty, valueProperty, onItemSelect, selectedItem } = props; */
 
 
   return ( 
