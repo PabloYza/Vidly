@@ -13,7 +13,7 @@ import LoginForm from './components/loginForm';
 import RegisterForm from './components/common/registerForm';
 import Logout from './components/logout';
 /* Services */
-import auth from './Services/authService';
+import auth from './services/authService';
 /* CSS modules */
 import 'react-toastify/dist/ReactToastify.css';
 
