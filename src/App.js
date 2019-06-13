@@ -1,6 +1,9 @@
+/* Objects from 3rd party libraries */
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
+/* Components */
 import Movies from './components/movies';
 import NotFound from './components/notFound';
 import Rentals from './components/rentals';
@@ -9,16 +12,27 @@ import NavBar from './components/navBar';
 import MovieForm from './components/movieForm';
 import LoginForm from './components/loginForm';
 import RegisterForm from './components/common/registerForm';
+/* CSS modules */
 import 'react-toastify/dist/ReactToastify.css';
 
 
 class App extends Component {
   state = {  }
+  
+  componentDidMount() {
+    try {
+      const jwt = localStorage.getItem('token');
+      const user = jwtDecode(jwt);
+      this.setState({ user });
+    }
+    catch (ex) {}
+  }
+  
   render() { 
     return (
     <React.Fragment>
       <ToastContainer />
-      <NavBar />  
+      <NavBar user={this.state.user} />  
       <main className="container">
         <Switch>
           <Route path='/register' component={RegisterForm} />
